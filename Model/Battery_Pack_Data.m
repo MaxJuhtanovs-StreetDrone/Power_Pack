@@ -45,9 +45,9 @@ Ki   = 10;  % Integral gain CV controller
 Kaw  = 1;   % Antiwindup gain CV controller
 %Ts   = 1;   % Sample time (s)
 %% Kalman Filter
-Q    = [1e-4 0; 0 1e-4]; % Covariance of the process noise, Q
-R    = 0.7;              % Covariance of the measurement noise, R
-P0   = [1e-5 0; 0 1];    % Initial state error covariance, P0
-SOC0 = 0.8;              % Initial SOC for estimator 
-Ts   = 1;                % Sample time
-R00 = 1;
+Q    = [1e-4 0 0;0 1e-4 0;0 0 1e-4]; % Covariance of the process noise, Q
+R    = 0.05;                         % Covariance of the measurement noise, R
+P0   = [1e-5 0 0; 0 1 0; 0 0 1e-5];  % Initial state error covariance, P0
+SOC0 = 0.65;                         % Estimator initial SOC 
+R00  = 0.008;                        % Estimator initial R0 
+Ts   = 1;                            % Sample time (s)
