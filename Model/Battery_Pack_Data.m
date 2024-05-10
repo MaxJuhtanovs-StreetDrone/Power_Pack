@@ -11,13 +11,13 @@
 % to the desired value.
 
 % Copyright 2022 The MathWorks, Inc.
-%% Cell 1 Parameters
+%% Cell 1 Parameters [Panasonics NCR18650BD]
+%% System Parameters
 SOC_vec = [0, .1, .25, .5, .75, .9, 1]; % Vector of state-of-charge values, SOC
 T_vec   = [278, 293, 313];              % Vector of temperatures, T, (K)
 AH      = 27;                           % Cell capacity, AH, (A*hr) 
 thermal_mass = 100;                     % Thermal mass (J/K)
 initialSOC = 0.5;                       % Battery initial SOC
-initialSOC2 = 0.5;
 V0_mat  = [3.49, 3.5, 3.51; 3.55, 3.57, 3.56; 3.62, 3.63, 3.64;...
     3.71, 3.71, 3.72; 3.91, 3.93, 3.94; 4.07, 4.08, 4.08;...
     4.19, 4.19, 4.19];                          % Open-circuit voltage, V0(SOC,T), (V)
@@ -34,9 +34,9 @@ tau1_mat = [20, 36, 39; 31, 45, 39; 109, 105, 61;...
 cell_area = 0.1019; % Cell area (m^2)
 h_conv    = 5;      % Heat transfer coefficient (W/(K*m^2))
 %% %% Balancing Parameters
-BalThreshold = 0.005;   % Threshold for cell balancing (V)
-vMax         = 4.1;     % Maximum cell voltage
-Ts           = 1;       % Sample time
+%BalThreshold = 0.005;   % Threshold for cell balancing (V)
+%vMax         = 4.1;     % Maximum cell voltage
+%Ts           = 1;       % Sample time
 %% "Battery CC-CV2" Block - Charging/Discharging Parameters
 
 vMax = 4.1; % Maximum cell voltage
@@ -46,8 +46,7 @@ Kaw  = 1;   % Antiwindup gain CV controller
 %Ts   = 1;   % Sample time (s)
 %% Kalman Filter
 Q    = [1e-4 0 0;0 1e-4 0;0 0 1e-4]; % Covariance of the process noise, Q
-R    = 0.05;                         % Covariance of the measurement noise, R
+R    = 0.7;                         % Covariance of the measurement noise, R
 P0   = [1e-5 0 0; 0 1 0; 0 0 1e-5];  % Initial state error covariance, P0
-SOC0 = 0.65;                         % Estimator initial SOC 
-R00  = 0.008;                        % Estimator initial R0 
+SOC0 = 0.8;              % Initial SOC for estimator R00  = 0.008;                        % Estimator initial R0 
 Ts   = 1;                            % Sample time (s)
