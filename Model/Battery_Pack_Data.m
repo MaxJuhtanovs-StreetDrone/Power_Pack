@@ -50,3 +50,7 @@ R    = 0.7;              % Covariance of the measurement noise, R
 P0   = [1e-5 0; 0 1];    % Initial state error covariance, P0
 SOC0 = 0.8;              % Initial SOC for estimator 
 Ts   = 1;                % Sample time
+%% Balancing Parameters
+BalThreshold = 0.005;   % Threshold for cell balancing (V)
+vMax         = 4.1;     % Maximum cell voltage
+Ts           = 1;       % Sample time
