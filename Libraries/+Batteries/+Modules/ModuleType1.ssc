@@ -1,0 +1,125 @@
+component ModuleType1
+    % ModuleType1:2
+    % Module Block
+    %    Model resolution: Lumped
+    %    Number of parallel assemblies: 3
+    %    Number of cells per parallel assembly: 3
+    %
+    % Block is parameterized for this Battery:
+    %    Part number: NCR18650BD
+    %    Manufacturer: Panasonic
+    %    Web link: https://industrial.panasonic.com/ww/products/batteries
+    %    Parameterization note: Predefined parameterizations of Simscape components use available data sources for supplying parameter values. Engineering judgement and simplifying assumptions are used to fill in for missing data. As a result, deviations between simulated and actual physical behavior should be expected. To ensure requisite accuracy, you should validate simulated behavior against experimental data and refine component models as necessary.
+    %
+    %    MATLAB version: 23.2
+    %    Simscape Battery version: 23.2
+    %    Simscape code generated on: 31-May-2024 19:51:58
+
+    parameters
+        SOC_vecCell = {[0 0.01 0.02 0.03 0.04 0.05 0.06 0.07 0.08 0.09 0.1 0.11 0.12 0.13 0.14 0.15 0.16 0.17 0.18 0.19 0.2 0.21 0.22 0.23 0.24 0.25 0.26 0.27 0.28 0.29 0.3 0.31 0.32 0.33 0.34 0.35 0.36 0.37 0.38 0.39 0.4 0.41 0.42 0.43 0.44 0.45 0.46 0.47 0.48 0.49 0.5 0.51 0.52 0.53 0.54 0.55 0.56 0.57 0.58 0.59 0.6 0.61 0.62 0.63 0.64 0.65 0.66 0.67 0.68 0.69 0.7 0.71 0.72 0.73 0.74 0.75 0.76 0.77 0.78 0.79 0.8 0.81 0.82 0.83 0.84 0.85 0.86 0.87 0.88 0.89 0.9 0.91 0.92 0.93 0.94 0.95 0.96 0.97 0.98 0.99 1],'1'}; % Vector of state-of-charge values, SOC
+        T_vecCell = {[-10 0 25 40 60],'degC'}; % Vector of temperatures, T
+        V0_matCell = {[2.90003 2.90003 2.90003 2.90003 2.90003;2.94341 2.94341 2.94341 2.94341 2.94341;2.98679 2.98679 2.98679 2.98679 2.98679;3.04987 3.04987 3.04987 3.04987 3.04987;3.09433 3.09433 3.09433 3.09433 3.09433;3.12791 3.12791 3.12791 3.12791 3.12791;3.16031 3.16031 3.16031 3.16031 3.16031;3.20369 3.20369 3.20369 3.20369 3.20369;3.23862 3.23862 3.23862 3.23862 3.23862;3.26689 3.26689 3.26689 3.26689 3.26689;3.29115 3.29115 3.29115 3.29115 3.29115;3.31383 3.31383 3.31383 3.31383 3.31383;3.33202 3.33202 3.33202 3.33202 3.33202;3.35112 3.35112 3.35112 3.35112 3.35112;3.36833 3.36833 3.36833 3.36833 3.36833;3.38413 3.38413 3.38413 3.38413 3.38413;3.39973 3.39973 3.39973 3.39973 3.39973;3.41137 3.41137 3.41137 3.41137 3.41137;3.42149 3.42149 3.42149 3.42149 3.42149;3.43136 3.43136 3.43136 3.43136 3.43136;3.44073 3.44073 3.44073 3.44073 3.44073;3.45027 3.45027 3.45027 3.45027 3.45027;3.46068 3.46068 3.46068 3.46068 3.46068;3.47113 3.47113 3.47113 3.47113 3.47113;3.47814 3.47814 3.47814 3.47814 3.47814;3.48494 3.48494 3.48494 3.48494 3.48494;3.49199 3.49199 3.49199 3.49199 3.49199;3.49905 3.49905 3.49905 3.49905 3.49905;3.50562 3.50562 3.50562 3.50562 3.50562;3.51187 3.51187 3.51187 3.51187 3.51187;3.51861 3.51861 3.51861 3.51861 3.51861;3.52535 3.52535 3.52535 3.52535 3.52535;3.53209 3.53209 3.53209 3.53209 3.53209;3.53818 3.53818 3.53818 3.53818 3.53818;3.54353 3.54353 3.54353 3.54353 3.54353;3.54849 3.54849 3.54849 3.54849 3.54849;3.55353 3.55353 3.55353 3.55353 3.55353;3.55855 3.55855 3.55855 3.55855 3.55855;3.56357 3.56357 3.56357 3.56357 3.56357;3.56831 3.56831 3.56831 3.56831 3.56831;3.57308 3.57308 3.57308 3.57308 3.57308;3.57787 3.57787 3.57787 3.57787 3.57787;3.58264 3.58264 3.58264 3.58264 3.58264;3.58755 3.58755 3.58755 3.58755 3.58755;3.5925 3.5925 3.5925 3.5925 3.5925;3.5985 3.5985 3.5985 3.5985 3.5985;3.60496 3.60496 3.60496 3.60496 3.60496;3.61149 3.61149 3.61149 3.61149 3.61149;3.61805 3.61805 3.61805 3.61805 3.61805;3.6246 3.6246 3.6246 3.6246 3.6246;3.63116 3.63116 3.63116 3.63116 3.63116;3.63855 3.63855 3.63855 3.63855 3.63855;3.64609 3.64609 3.64609 3.64609 3.64609;3.65336 3.65336 3.65336 3.65336 3.65336;3.66064 3.66064 3.66064 3.66064 3.66064;3.66791 3.66791 3.66791 3.66791 3.66791;3.67613 3.67613 3.67613 3.67613 3.67613;3.68522 3.68522 3.68522 3.68522 3.68522;3.69443 3.69443 3.69443 3.69443 3.69443;3.70367 3.70367 3.70367 3.70367 3.70367;3.713 3.713 3.713 3.713 3.713;3.72241 3.72241 3.72241 3.72241 3.72241;3.73154 3.73154 3.73154 3.73154 3.73154;3.74037 3.74037 3.74037 3.74037 3.74037;3.7492 3.7492 3.7492 3.7492 3.7492;3.75786 3.75786 3.75786 3.75786 3.75786;3.76617 3.76617 3.76617 3.76617 3.76617;3.77556 3.77556 3.77556 3.77556 3.77556;3.78485 3.78485 3.78485 3.78485 3.78485;3.79413 3.79413 3.79413 3.79413 3.79413;3.8034 3.8034 3.8034 3.8034 3.8034;3.81149 3.81149 3.81149 3.81149 3.81149;3.81977 3.81977 3.81977 3.81977 3.81977;3.82804 3.82804 3.82804 3.82804 3.82804;3.83631 3.83631 3.83631 3.83631 3.83631;3.84472 3.84472 3.84472 3.84472 3.84472;3.85317 3.85317 3.85317 3.85317 3.85317;3.86155 3.86155 3.86155 3.86155 3.86155;3.86993 3.86993 3.86993 3.86993 3.86993;3.87831 3.87831 3.87831 3.87831 3.87831;3.88686 3.88686 3.88686 3.88686 3.88686;3.89534 3.89534 3.89534 3.89534 3.89534;3.90461 3.90461 3.90461 3.90461 3.90461;3.91454 3.91454 3.91454 3.91454 3.91454;3.92565 3.92565 3.92565 3.92565 3.92565;3.93721 3.93721 3.93721 3.93721 3.93721;3.94924 3.94924 3.94924 3.94924 3.94924;3.96155 3.96155 3.96155 3.96155 3.96155;3.97383 3.97383 3.97383 3.97383 3.97383;3.98598 3.98598 3.98598 3.98598 3.98598;3.99856 3.99856 3.99856 3.99856 3.99856;4.01117 4.01117 4.01117 4.01117 4.01117;4.02361 4.02361 4.02361 4.02361 4.02361;4.03609 4.03609 4.03609 4.03609 4.03609;4.04694 4.04694 4.04694 4.04694 4.04694;4.05695 4.05695 4.05695 4.05695 4.05695;4.06641 4.06641 4.06641 4.06641 4.06641;4.07551 4.07551 4.07551 4.07551 4.07551;4.08514 4.08514 4.08514 4.08514 4.08514;4.09447 4.09447 4.09447 4.09447 4.09447;4.10453 4.10453 4.10453 4.10453 4.10453],'V'}; % Open-circuit voltage, V0(SOC,T)
+        V_rangeCell = {[2.25 Inf],'V'}; % Terminal voltage operating range [Min Max]
+        R0_matCell = {[0.54124 0.47218 0.1741 0.16472 0.13072;0.60048 0.51942 0.15823 0.09801 0.03241;0.57827 0.49613 0.14313 0.06257 0.00499;0.55606 0.47283 0.13285 0.0492 0.00058;0.53384 0.44953 0.12044 0.03857 0.00058;0.51163 0.42624 0.10641 0.0337 0.00058;0.48942 0.40294 0.09605 0.03258 0.00058;0.46721 0.37965 0.09162 0.03508 0.0103;0.44499 0.35635 0.08758 0.0376 0.01722;0.42278 0.33305 0.08349 0.04115 0.02235;0.40057 0.30976 0.08021 0.04338 0.0273;0.37836 0.28646 0.07738 0.04509 0.03173;0.35615 0.26317 0.07487 0.04551 0.03469;0.33393 0.24021 0.07338 0.04781 0.03783;0.31172 0.21801 0.07189 0.04948 0.04012;0.28951 0.203 0.07117 0.05069 0.04195;0.26873 0.19013 0.0704 0.05182 0.04371;0.24946 0.17834 0.06898 0.05166 0.04417;0.23189 0.16793 0.06755 0.05143 0.04397;0.21926 0.15878 0.06631 0.0513 0.04362;0.2084 0.15119 0.06509 0.05101 0.04311;0.19882 0.14534 0.06388 0.05077 0.04265;0.19282 0.14029 0.06326 0.05091 0.04272;0.18782 0.13679 0.06281 0.05124 0.04325;0.18252 0.13215 0.06182 0.05043 0.04264;0.17725 0.12766 0.06095 0.04955 0.04196;0.173 0.125 0.06025 0.04876 0.04137;0.16875 0.12234 0.05955 0.04802 0.04078;0.16459 0.11952 0.05877 0.04782 0.04033;0.16124 0.11704 0.05807 0.04752 0.03993;0.15805 0.11494 0.05761 0.04737 0.03969;0.15486 0.11285 0.05714 0.04723 0.03945;0.15212 0.11075 0.05668 0.04709 0.03921;0.15022 0.10906 0.05611 0.04673 0.03878;0.14807 0.10773 0.05546 0.04612 0.03867;0.14579 0.10628 0.0549 0.04546 0.03843;0.14353 0.10484 0.05439 0.04485 0.03821;0.14127 0.10351 0.05388 0.04423 0.03799;0.13957 0.10228 0.05337 0.04361 0.03777;0.13785 0.10097 0.0528 0.0429 0.03746;0.13614 0.09966 0.05223 0.0422 0.0367;0.13443 0.09836 0.05165 0.04151 0.03572;0.13272 0.09711 0.05106 0.04111 0.03474;0.13096 0.09591 0.05046 0.04079 0.03381;0.12918 0.09471 0.04986 0.04049 0.03288;0.12775 0.09387 0.04945 0.04053 0.03231;0.12648 0.09317 0.04913 0.04073 0.03189;0.12522 0.09249 0.04883 0.04095 0.03151;0.12398 0.09181 0.04854 0.04066 0.03136;0.12296 0.09112 0.04826 0.04006 0.03121;0.12207 0.09044 0.04797 0.03947 0.03106;0.12147 0.09003 0.04782 0.03916 0.03119;0.12091 0.08967 0.04765 0.03889 0.03136;0.12027 0.08886 0.0473 0.03854 0.03145;0.11955 0.08797 0.04695 0.03818 0.03154;0.11836 0.08708 0.04661 0.03764 0.03136;0.11749 0.08651 0.04638 0.03733 0.03126;0.1169 0.08628 0.0463 0.03731 0.03144;0.11636 0.0866 0.04625 0.03733 0.03167;0.11679 0.08693 0.04621 0.03736 0.0319;0.11639 0.08729 0.04624 0.03741 0.03216;0.11602 0.08748 0.04628 0.0375 0.03245;0.11556 0.08747 0.04628 0.03749 0.03262;0.115 0.08737 0.04623 0.03738 0.03268;0.11444 0.08726 0.04617 0.03728 0.03275;0.11413 0.08683 0.04599 0.03714 0.03276;0.11369 0.08629 0.04573 0.03712 0.03265;0.11362 0.0861 0.0457 0.03746 0.03289;0.11351 0.08597 0.04568 0.03777 0.03289;0.1134 0.08596 0.04565 0.03807 0.03285;0.11329 0.08593 0.04563 0.03837 0.0328;0.11297 0.08552 0.04535 0.03804 0.03236;0.1131 0.0855 0.0451 0.03769 0.03198;0.11323 0.08564 0.04486 0.03733 0.0316;0.11336 0.08578 0.04461 0.03698 0.03122;0.11354 0.08596 0.04446 0.03667 0.03091;0.11376 0.08614 0.04435 0.03629 0.0306;0.11421 0.08628 0.04423 0.03577 0.03027;0.11467 0.08641 0.04411 0.03525 0.02995;0.11513 0.08655 0.044 0.03473 0.02961;0.11565 0.08679 0.04372 0.03426 0.02933;0.11614 0.08704 0.04339 0.03378 0.02903;0.11689 0.08756 0.04323 0.03353 0.02899;0.11825 0.08829 0.0432 0.03328 0.02916;0.12033 0.08941 0.04344 0.03342 0.02973;0.12256 0.09067 0.04374 0.03371 0.0301;0.12495 0.09191 0.0441 0.03415 0.02981;0.12743 0.09323 0.04452 0.03468 0.0296;0.13108 0.09454 0.04494 0.03488 0.02939;0.13509 0.09581 0.0454 0.03488 0.02914;0.13924 0.09835 0.04594 0.03502 0.02907;0.14357 0.1012 0.0463 0.03517 0.02937;0.14857 0.10399 0.04649 0.03528 0.02963;0.15358 0.10679 0.04668 0.03541 0.02989;0.15894 0.10894 0.04629 0.035 0.02961;0.16451 0.11073 0.04541 0.03434 0.02892;0.17255 0.11235 0.04438 0.03375 0.02804;0.17994 0.11383 0.04326 0.03305 0.02704;0.18615 0.11422 0.04154 0.03252 0.02601;0.19123 0.11362 0.03869 0.03189 0.02484;0.17773 0.09538 0.03326 0.0315 0.0239],'Ohm'}; % Terminal resistance, R0(SOC,T)
+        AHCell = {3.153,'hr*A'}; % Cell capacity, AH
+        extrapolation_optionCell = {simscape.enum.extrapolation.nearest,'1'}; % Extrapolation method for all tables
+        thermal_massCell = {44.55 ,'J/K'}; % Thermal mass
+        CoolantResistance = {1.2,'K/W'}; % Cell level coolant thermal path resistance
+        AmbientResistance = {25,'K/W'}; % Cell level ambient thermal path resistance
+    end
+
+    parameters(ExternalAccess=none)
+        P = 3; % Batteries in Parallel
+        S = 3; % Batteries in Series
+    end
+
+    nodes
+        p = foundation.electrical.electrical; % +
+        n = foundation.electrical.electrical; % -
+        ClntH = foundation.thermal.thermal; % ClntH
+        AmbH = foundation.thermal.thermal; % AmbH
+    end
+
+    variables
+        iCell = {0,'A'}; % Cell current (positive in)
+        vCell = {0,'V'}; % Cell terminal voltage
+        socCell = {value={1,'1'},priority=priority.high}; % Cell state of charge
+        numCyclesCell = {value={0,'1'},priority=priority.high}; % Cell discharge cycles
+        temperatureCell = {value={298.15,'K'},priority=priority.high}; % Cell temperature
+        vParallelAssembly = {value={repmat(0,3,1),'V'},priority=priority.none}; % Parallel Assembly Voltage
+        socParallelAssembly = {value={repmat(1,3,1),'1'},priority=priority.none}; % Parallel Assembly state of charge
+    end
+
+    intermediates
+        power_dissipated = Panasonic_NCR18650BD.power_dissipated*((S*P)-1); % Power dissipated by (S*P)-1 cells
+    end
+
+    equations
+        assert(length(iCell) == 1);
+        assert(length(vCell) == 1);
+        assert(length(socCell) == 1);
+        assert(length(numCyclesCell) == 1);
+        assert(length(temperatureCell) == 1);
+        assert(length(vParallelAssembly) == S);
+        assert(length(socParallelAssembly) == S);
+        vParallelAssembly(1) == Panasonic_NCR18650BD(1).p.v - Panasonic_NCR18650BD(1).n.v;
+        socParallelAssembly(1) == Panasonic_NCR18650BD.stateOfCharge;
+        Panasonic_NCR18650BD.i == iCell;
+        Panasonic_NCR18650BD.v == vCell;
+        Panasonic_NCR18650BD.stateOfCharge == socCell;
+        Panasonic_NCR18650BD.num_cycles == numCyclesCell;
+        Panasonic_NCR18650BD.cell_temperature == temperatureCell;
+    end
+
+    components(ExternalAccess=observe)
+        Panasonic_NCR18650BD = batteryecm.table_battery(SOC_vec = SOC_vecCell,...
+            T_vec = T_vecCell,V0_mat = V0_matCell,V_range = V_rangeCell,...
+            R0_mat = R0_matCell,AH = AHCell,extrapolation_option = extrapolation_optionCell,...
+            thermal_mass = thermal_massCell,...
+            T_dependence = simscape.enum.tablebattery.temperature_dependence.yes,...
+            prm_age_OCV = simscape.enum.tablebattery.prm_age_OCV.OCV,prm_age_capacity = simscape.enum.tablebattery.prm_age.disabled,...
+            prm_age_modeling = simscape.enum.tablebattery.prm_age_modeling.equation,prm_age_resistance = simscape.enum.tablebattery.prm_age.disabled,...
+            prm_dir = simscape.enum.tablebattery.prm_dir.noCurrentDirectionality,...
+            prm_dyn = simscape.enum.tablebattery.prm_dyn.off,...
+            prm_fade = simscape.enum.tablebattery.prm_fade.disabled,...
+            prm_leak = simscape.enum.tablebattery.prm_leak.disabled,thermal_port = simscape.enum.thermaleffects.model,...
+            i.priority = priority.none,v.priority = priority.none,...
+            stateOfCharge.priority = priority.none,num_cycles.priority = priority.none,...
+            cell_temperature.priority = priority.none);
+        CoolantResistor = foundation.thermal.elements.resistance(resistance = CoolantResistance/(S*P));
+        AmbientResistor = foundation.thermal.elements.resistance(resistance = AmbientResistance/(S*P));
+    end
+
+    components(Access=private)
+        PositiveAdapter = BatteriesLumpingAdapters.ElectricalLumpingAdapter(CellsInParallel = P,CellsInSeries = S);
+        NegativeAdapter = BatteriesLumpingAdapters.ElectricalLumpingAdapter(CellsInParallel = P,CellsInSeries = S);
+        ThermalAdapter = BatteriesLumpingAdapters.ThermalLumpingAdapter(CellsInParallel = S*P);
+    end
+
+    connections
+        connect(n,NegativeAdapter.LumpedNode);
+        connect(NegativeAdapter.CellNode,Panasonic_NCR18650BD.n);
+        connect(p,PositiveAdapter.LumpedNode);
+        connect(PositiveAdapter.CellNode,Panasonic_NCR18650BD.p);
+        connect(Panasonic_NCR18650BD.H,ThermalAdapter.CellNode);
+        connect(ThermalAdapter.LumpedNode,CoolantResistor.A);
+        connect(CoolantResistor.B,ClntH);
+        connect(ThermalAdapter.LumpedNode,AmbientResistor.A);
+        connect(AmbientResistor.B,AmbH);
+    end
+
+    annotations
+        [p] : Side=top;
+        [n] : Side=bottom;
+        UILayout = [UIGroup("Main",SOC_vecCell,T_vecCell,V0_matCell,V_rangeCell,R0_matCell,AHCell,extrapolation_optionCell),...
+            UIGroup("Thermal",thermal_massCell,CoolantResistance,AmbientResistance)];
+        Icon = 'module.svg';
+    end
+
+    for ParallelAssemblyIdx = 2:S
+        equations
+            vParallelAssembly(1) == vParallelAssembly(ParallelAssemblyIdx);
+            socParallelAssembly(1) == socParallelAssembly(ParallelAssemblyIdx);
+        end
+    end
+end
